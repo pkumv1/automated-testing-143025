@@ -1,0 +1,25 @@
+{
+  "name": "automated-testing-change-detection",
+  "version": "1.0.0",
+  "description": "Change-focused E2E testing with self-healing capabilities",
+  "scripts": {
+    "test": "npm run analyze && npm run test:e2e",
+    "analyze": "node test-scripts/change-analyzer.js",
+    "test:e2e": "node test-scripts/test-runner.js",
+    "test:api": "node test-scripts/api-tester.js",
+    "test:multi-browser": "node test-scripts/multi-browser.js",
+    "report": "node test-scripts/report-generator.js"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.44.0",
+    "simple-git": "^3.24.0",
+    "@babel/parser": "^7.24.5",
+    "@babel/traverse": "^7.24.5",
+    "diff": "^5.2.0",
+    "axios": "^1.7.2",
+    "glob": "^10.3.15",
+    "chalk": "^5.3.0",
+    "fs-extra": "^11.2.0"
+  },
+  "type": "module"
+}
