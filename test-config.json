@@ -1,0 +1,38 @@
+{
+  "changeDetection": {
+    "enabled": true,
+    "gitDiffDepth": 5,
+    "includePatterns": ["**/*.js", "**/*.jsx", "**/*.ts", "**/*.tsx"],
+    "excludePatterns": ["**/node_modules/**", "**/test/**", "**/*.test.js"]
+  },
+  "selfHealing": {
+    "enabled": true,
+    "maxRetries": 3,
+    "strategies": [
+      "testId",
+      "css",
+      "xpath",
+      "text",
+      "visual",
+      "ai"
+    ]
+  },
+  "browsers": [
+    "chromium"
+  ],
+  "performance": {
+    "loadTest": {
+      "concurrent": 100,
+      "duration": 60000,
+      "threshold": {
+        "responseTime": 1000,
+        "successRate": 0.95
+      }
+    }
+  },
+  "reporting": {
+    "interactive": true,
+    "markdown": true,
+    "json": true
+  }
+}
